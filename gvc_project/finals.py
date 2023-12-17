@@ -318,7 +318,7 @@ def main():
         ll_translation.append(pyrr.matrix44.create_from_translation(ll_position)) #translate to its position (.4, 0, 0)
   
     # Continue to the right
-    for i in range (6, 30, 1):
+    for i in range (6, 50, 1):
         translation.append(pyrr.matrix44.create_from_translation([i/10, 0, -.1])) # continue going to the right
         trans_above.append(pyrr.matrix44.create_from_translation([0, 0, 0])) #same as identity since no more transformation
         ll_scaling.append(pyrr.matrix44.multiply(ll_initial_scale, pyrr.matrix44.create_from_scale([1, (5-6)/5, 1])))
@@ -333,7 +333,7 @@ def main():
     tex_loc = glGetUniformLocation(shader, "texture1")
 
     # RENDERING LOOP
-    glClearColor(0.1, 0.1, 0.1, 1)
+    glClearColor(1.0, 1.0, 1.0, 1.0)
     glEnable(GL_DEPTH_TEST)
     glEnable(GL_BLEND) #for transparency and coloring effect
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) #for transparency and coloring effect
